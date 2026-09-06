@@ -1,0 +1,159 @@
+# Statistical Measures – Titanic Dataset
+
+This project demonstrates some basic **statistical measures** using Python, NumPy, Pandas, Matplotlib, and Seaborn.
+
+The Titanic dataset is used to analyze the **Age** column, while separate sample datasets are used to understand data spread and variation.
+
+## 📌 Concepts Covered
+
+* Range
+* Mean Absolute Deviation (MAD)
+* Variance
+* Standard Deviation
+* Histogram
+
+## 🛠️ Libraries Used
+
+```python
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+## 📂 Dataset
+
+The project uses:
+
+```text
+Titanic-Dataset.csv
+```
+
+The `Age` column of the Titanic dataset is used for calculating the minimum value, maximum value, range, and for graphical representation.
+
+## 📊 1. Range
+
+Range tells us the difference between the **maximum and minimum values** in a dataset.
+
+### Formula
+
+```text
+Range = Maximum Value - Minimum Value
+```
+
+In the project:
+
+```python
+minimum_value = np.min(dataset["Age"])
+maximum_value = np.max(dataset["Age"])
+
+Range = maximum_value - minimum_value
+```
+
+A larger range means that the values cover a wider interval.
+
+## 📏 2. Mean Absolute Deviation (MAD)
+
+Mean Absolute Deviation measures the **average distance of data values from the mean**.
+
+The absolute value is used so that negative deviations do not cancel out positive deviations.
+
+```python
+np.abs(-2)
+```
+
+returns:
+
+```text
+2
+```
+
+### Calculation
+
+```python
+mad = np.sum(np.abs(data - mean)) / len(data)
+```
+
+Two sections (`sec_a` and `sec_b`) are compared using MAD.
+
+Generally, a **smaller MAD indicates that the values are closer to the mean**, while a larger MAD indicates more spread.
+
+## 📐 3. Standard Deviation
+
+Standard deviation measures how much the values are spread out around the mean.
+
+```python
+secA_std = np.std(sec_a)
+secB_std = np.std(sec_b)
+```
+
+A **small standard deviation** means the values are relatively close to the mean.
+
+A **large standard deviation** means the values are more widely spread.
+
+## 📈 4. Variance
+
+Variance also measures the spread of data.
+
+It is based on the **squared differences from the mean**.
+
+```python
+secA_var = np.var(sec_a)
+secB_var = np.var(sec_b)
+```
+
+Standard deviation and variance are closely related:
+
+```text
+Standard Deviation = √Variance
+```
+
+Therefore:
+
+```text
+Variance = (Standard Deviation)²
+```
+
+## 📊 5. Histogram
+
+A histogram is used to visualize the **distribution of numerical data**.
+
+In this project, Seaborn is used to visualize the distribution of the Titanic passengers' ages:
+
+```python
+sns.histplot(x="Age", data=dataset)
+plt.show()
+```
+
+The histogram helps us understand:
+
+* How ages are distributed
+* Which age ranges contain more observations
+* The overall shape of the distribution
+* Where the data is concentrated
+
+## 🎯 Learning Outcomes
+
+After completing this project, you should understand:
+
+* How to calculate the range of data
+* What Mean Absolute Deviation represents
+* How variance measures data spread
+* How standard deviation measures dispersion
+* The relationship between variance and standard deviation
+* How to visualize numerical data using a histogram
+* How NumPy, Pandas, Matplotlib, and Seaborn can be used for statistical analysis
+
+## 🚀 Technologies
+
+* Python
+* NumPy
+* Pandas
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
+* Titanic Dataset
+
+## 📌 Conclusion
+
+This project provides a basic introduction to **descriptive statistics and data distribution**. These statistical measures are important foundations for **Data Analysis, Machine Learning, and Data Science**.
